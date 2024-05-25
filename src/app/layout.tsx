@@ -2,6 +2,8 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { ScreenHelpers } from "@/components/indicators/ScreenHelpers";
+import { ThemeProvider } from "@/components/providers/ThemeProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -16,8 +18,17 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={cn(inter.className, "antialiased")}>{children}</body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={cn(inter.className, "antialiased")}>
+        <ThemeProvider
+          attribute="class"
+          disableTransitionOnChange
+          defaultTheme="light"
+        >
+          {children}
+          <ScreenHelpers />
+        </ThemeProvider>
+      </body>
     </html>
   );
 }
