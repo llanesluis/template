@@ -1,6 +1,5 @@
-import { Sun } from "lucide-react";
-import ThemeIndicator from "./ThemeIndicator";
-import ScreenSizeIndicator from "./ScreenSizeIndicator";
+import ScreenSizeIndicator from "./screen-size-indicator";
+import ThemeIndicator from "./theme-indicator";
 
 export function ScreenHelpers() {
   if (process.env.NODE_ENV === "production") return null;
