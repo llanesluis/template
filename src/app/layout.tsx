@@ -3,7 +3,6 @@ import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import Providers from "@/components/providers/providers";
-import { ScreenHelpers } from "@/components/indicators/screen-indicators";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -20,10 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn(inter.className, "antialiased")}>
-        <Providers>
-          {children}
-          <ScreenHelpers />
-        </Providers>
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

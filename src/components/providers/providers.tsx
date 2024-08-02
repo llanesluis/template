@@ -1,3 +1,4 @@
+import { ScreenHelpers } from "../indicators/screen-indicators";
 import { ThemeProvider } from "./theme-provider";
 
 interface providersProps {
@@ -9,9 +10,10 @@ export default function Providers({ children }: providersProps) {
     <ThemeProvider
       attribute="class"
       disableTransitionOnChange
-      defaultTheme="light"
+      defaultTheme="dark"
     >
       {children}
+      <ScreenHelpers />
     </ThemeProvider>
   );
 }
