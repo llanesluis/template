@@ -32,7 +32,11 @@ export default function VisuallyHidden({
   }, []);
 
   if (forceShow) {
-    return <span>{children}</span>;
+    return (
+      <span className="pointer-events-none text-muted-foreground">
+        {children}
+      </span>
+    );
   }
 
   return (

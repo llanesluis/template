@@ -1,13 +1,9 @@
 import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
-import { ReactNode } from "react";
+import { ComponentProps } from "react";
 
-interface ExternalLinkProps {
-  href: string;
-  title?: string;
-  children?: ReactNode;
-  className?: string;
-  indicatorIcon?: boolean;
+interface ExternalLinkProps extends ComponentProps<"a"> {
+  showIcon?: boolean;
 }
 
 export default function ExternalLink({
@@ -15,7 +11,8 @@ export default function ExternalLink({
   className,
   children,
   title,
-  indicatorIcon,
+  showIcon,
+  ...rest
 }: ExternalLinkProps) {
   if (!href || !children) return null;
 
@@ -26,9 +23,10 @@ export default function ExternalLink({
       className={cn("flex w-fit items-center justify-between", className)}
       rel="noopener noreferrer"
       target="_blank"
+      {...rest}
     >
       {children || title}
-      {indicatorIcon && <ArrowUpRight size={14} />}
+      {showIcon && <ArrowUpRight size={14} />}
     </a>
   );
 }

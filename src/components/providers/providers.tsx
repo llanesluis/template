@@ -9,8 +9,9 @@ export default function Providers({ children }: providersProps) {
   return (
     <ThemeProvider
       attribute="class"
+      enableSystem
+      defaultTheme="system"
       disableTransitionOnChange
-      defaultTheme="dark"
     >
       {children}
       <ScreenHelpers />
