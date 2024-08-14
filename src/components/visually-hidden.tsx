@@ -17,13 +17,16 @@ export default function VisuallyHidden({
           setForceShow(true);
         }
       };
+
       const handleKeyUp = (ev: KeyboardEvent) => {
         if (ev.key === "Alt") {
           setForceShow(false);
         }
       };
+
       window.addEventListener("keydown", handleKeyDown);
       window.addEventListener("keyup", handleKeyUp);
+
       return () => {
         window.removeEventListener("keydown", handleKeyDown);
         window.removeEventListener("keyup", handleKeyUp);
