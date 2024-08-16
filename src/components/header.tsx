@@ -1,22 +1,37 @@
+import Link from "next/link";
 import ExternalLink from "./global/external-link";
 import VisuallyHidden from "./global/visually-hidden";
 import { Container } from "./global/wrappers";
+
+const NAV_LINKS = [
+  { href: "/about", title: "About" },
+  { href: "/contact", title: "Contact" },
+];
 
 export default function Header() {
   return (
     <header className="h-16 border-b">
       <Container className="flex items-center justify-between">
-        <span>
-          <p className="font-semibold">luisllaboj</p>
+        <Link className="font-semibold" href="/">
+          luisllaboj
           <VisuallyHidden>logo</VisuallyHidden>
-        </span>
-        <Links />
+        </Link>
+
+        <nav className="flex items-center gap-4">
+          {NAV_LINKS.map(({ href, title }) => (
+            <Link key={href} href={href}>
+              {title}
+            </Link>
+          ))}
+        </nav>
+
+        <ExternalLinks />
       </Container>
     </header>
   );
 }
 
-function Links() {
+function ExternalLinks() {
   return (
     <div className="flex items-center gap-2">
       <ExternalLink
