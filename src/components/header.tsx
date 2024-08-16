@@ -1,16 +1,17 @@
-import ExternalLink from "./external-link";
-import VisuallyHidden from "./visually-hidden";
+import ExternalLink from "./global/external-link";
+import VisuallyHidden from "./global/visually-hidden";
+import { Container } from "./global/wrappers";
 
 export default function Header() {
   return (
-    <header className="h-12 border-b">
-      <div className="container flex h-full items-center justify-between">
-        <div>
+    <header className="h-16 border-b">
+      <Container className="flex items-center justify-between">
+        <span>
           <p className="font-semibold">luisllaboj</p>
           <VisuallyHidden>logo</VisuallyHidden>
-        </div>
+        </span>
         <Links />
-      </div>
+      </Container>
     </header>
   );
 }

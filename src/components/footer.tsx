@@ -1,9 +1,13 @@
+import { Container } from "./global/wrappers";
+
 export default function Footer() {
   return (
-    <footer className="grid h-12 place-items-center border-t">
-      <p className="text-sm text-muted-foreground">
-        &copy; {new Date().getFullYear()} luisllaboj. All rights reserved.
-      </p>
+    <footer className="h-16 border-t">
+      <Container className="grid place-items-center">
+        <p className="text-sm text-muted-foreground">
+          &copy; {new Date().getFullYear()} luisllaboj. All rights reserved.
+        </p>
+      </Container>
     </footer>
   );
 }

@@ -1,9 +1,11 @@
+import { Container, Section } from "@/components/global/wrappers";
+
 export default function Home() {
   return (
-    <section className="py-20">
-      <div className="container flex">
+    <Section>
+      <Container>
         <h1>Hello world!</h1>
-      </div>
-    </section>
+      </Container>
+    </Section>
   );
 }
