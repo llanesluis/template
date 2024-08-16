@@ -1,10 +1,11 @@
+import { H1 } from "@/components/global/headings";
 import { Container, Section } from "@/components/global/wrappers";
 
 export default function ContactPage() {
   return (
     <Section>
       <Container>
-        <h1 className="text-5xl font-bold">Contact me</h1>
+        <H1>Contact me</H1>
         <p className="text-pretty">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
           nisi maxime, mollitia quos unde molestiae fugit quisquam

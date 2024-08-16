@@ -1,20 +1,21 @@
+import { H1, H2, H3 } from "@/components/global/headings";
 import { Container, Section } from "@/components/global/wrappers";
 
 export default function AboutPage() {
   return (
     <Section>
       <Container>
-        <h1 className="text-5xl font-bold">About</h1>
+        <H1>About</H1>
         <p className="text-pretty">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo impedit
           quidem doloribus, earum, aspernatur ab optio ea delectus enim adipisci
           deserunt ipsam voluptate eius, labore in?
         </p>
 
-        <h2 className="text-pretty text-2xl font-semibold">
+        <H2>
           Lorem ipsum dolor sit amet consectetur adipisicing dolor sit amet
           consectetur..
-        </h2>
+        </H2>
         <p className="text-pretty">
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Rerum fuga
           eos delectus repellendus exercitationem iste voluptatem, laborum autem
@@ -22,6 +23,13 @@ export default function AboutPage() {
           voluptas id! Necessitatibus voluptates fugit, vel, corporis nobis
           autem suscipit dolorem molestiae reiciendis facere beatae, doloremque
           asperiores veniam iste omnis fugiat vitae fuga nostrum et.
+        </p>
+
+        <H3>Lorem ipsum dolor sit amet consectetur adipisicing.</H3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse amet
+          quod tempore aliquam libero fugit laudantium, sapiente, dolore quaerat
+          illum, eos fugiat.
         </p>
       </Container>
     </Section>
