@@ -25,7 +25,7 @@ export default function ExternalLink({
       target="_blank"
       {...rest}
     >
-      {children || title}
+      {children}
       {showIcon && <ArrowUpRight size={14} />}
     </a>
   );
