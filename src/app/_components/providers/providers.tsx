@@ -1,4 +1,3 @@
-import { ScreenHelpers } from "../indicators/screen-indicators";
 import { ThemeProvider } from "./theme-provider";
 
 interface providersProps {
@@ -14,7 +13,6 @@ export default function Providers({ children }: providersProps) {
       disableTransitionOnChange
     >
       {children}
-      <ScreenHelpers />
     </ThemeProvider>
   );
 }

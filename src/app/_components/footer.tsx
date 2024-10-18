@@ -1,4 +1,4 @@
-import { Container } from "./global/wrappers";
+import { Container } from "@/components/global/wrappers";
 
 export default function Footer() {
   return (

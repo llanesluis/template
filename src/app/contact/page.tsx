@@ -1,6 +1,6 @@
 import { H1 } from "@/components/global/headings";
 import { Container, Section } from "@/components/global/wrappers";
-import CommaSeparatedInput from "./comma-separated-input";
+import CommaSeparatedInput from "./_components/comma-separated-input";
 
 export default function ContactPage() {
   return (

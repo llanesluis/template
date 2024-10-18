@@ -2,9 +2,10 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import Providers from "@/components/providers/providers";
-import Footer from "@/components/footer";
-import Header from "@/components/header";
+import Providers from "@/app/_components/providers/providers";
+import Footer from "@/app/_components/footer";
+import Navbar from "@/app/_components/navbar";
+import { DynamicScreenDevTools } from "./_components/indicators/screen-indicators";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -26,9 +27,11 @@ export default function RootLayout({
     >
       <body className={cn(inter.className, "flex min-h-screen flex-col")}>
         <Providers>
-          <Header />
-          <main className="grow">{children}</main>
+          <Navbar />
+          <div className="isolate grid grow">{children}</div>
           <Footer />
+
+          <DynamicScreenDevTools />
         </Providers>
       </body>
     </html>
