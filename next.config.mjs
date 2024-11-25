@@ -3,7 +3,6 @@ const nextConfig = {
   experimental: {
     reactCompiler: true,
     ppr: true,
-    typedRoutes: true,
   },
 };
 

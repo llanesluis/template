@@ -1,13 +1,24 @@
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Inter as InterGoogle } from "next/font/google";
 import Providers from "@/app/_components/providers/providers";
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
 import { DynamicScreenDevTools } from "./_components/indicators/screen-indicators";
+import localFont from "next/font/local";
 
-const inter = Inter({ subsets: ["latin"] });
+// La fuente Inter que tiene google no soporta los cambios nuevos
+// de la nueva version de Inter
+const interGoogle = InterGoogle({ subsets: ["latin"] });
+
+// Esta fuente local fue descargada desde la página oficial
+// https://rsms.me/inter/download/ y tuvo que ser self-hosted
+// nota: no todos los navegadores soportan la variable asi que debe configurarse
+// con una regla @supports de css (en el archivo globals.css)
+const interLocal = localFont({
+  src: "../fonts/Inter/InterVariable.woff2",
+});
 
 export const metadata: Metadata = {
   title: "Template Next.js - Tailwind CSS - TypeScript",
@@ -25,7 +36,7 @@ export default function RootLayout({
       className="scroll-smooth antialiased selection:bg-green-300 dark:selection:bg-green-900"
       suppressHydrationWarning
     >
-      <body className={cn(inter.className, "flex min-h-screen flex-col")}>
+      <body className={cn(interLocal.className, "flex min-h-screen flex-col")}>
         <Providers>
           <Navbar />
           <div className="isolate grid grow">{children}</div>
