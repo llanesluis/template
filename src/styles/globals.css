@@ -80,3 +80,16 @@
     @apply bg-background text-foreground;
   }
 }
+
+.loading-button {
+  display: grid;
+  grid-template-areas: "stack";
+  place-items: center;
+
+  & .content {
+    grid-area: stack;
+  }
+  & .loading {
+    grid-area: stack;
+  }
+}

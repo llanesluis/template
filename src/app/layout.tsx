@@ -5,8 +5,8 @@ import { Inter as InterGoogle } from "next/font/google";
 import Providers from "@/app/_components/providers/providers";
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
-import { DynamicScreenDevTools } from "./_components/indicators/screen-indicators";
 import localFont from "next/font/local";
+import { DynamicScreenDevTools } from "@/components/devtools/screen-devtools";
 
 // La fuente Inter que tiene google no soporta los cambios nuevos
 // de la nueva version de Inter

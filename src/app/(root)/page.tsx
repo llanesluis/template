@@ -1,7 +1,14 @@
+"use client";
+
 import { H1, H2, H3 } from "@/components/global/headings";
 import { Container, Section } from "@/components/global/wrappers";
+import { Button } from "@/components/ui/button";
+import { LoadingButton } from "@/components/ui/loading-button";
+import { Send } from "lucide-react";
+import { useState } from "react";
 
 export default function Home() {
+  const [isLoading, setIsLoading] = useState(false);
   return (
     <main>
       <Section>
@@ -21,6 +28,13 @@ export default function Home() {
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
             incidunt quaerat suscipit ipsam repudiandae dolor.
           </p>
+
+          <Button onClick={() => setIsLoading(!isLoading)}>
+            Toggle loading state
+          </Button>
+          <LoadingButton isLoading={isLoading} variant={"destructive"}>
+            Loading button
+          </LoadingButton>
         </Container>
       </Section>
     </main>
