@@ -36,9 +36,17 @@ export default function RootLayout({
       className="scroll-smooth antialiased selection:bg-green-300 dark:selection:bg-green-900"
       suppressHydrationWarning
     >
-      <body className={cn(interLocal.className, "flex min-h-screen flex-col")}>
+      <body
+        className={cn(
+          interLocal.className,
+          "isolate flex min-h-screen flex-col",
+        )}
+      >
         <Providers>
           <Navbar />
+          <div className="fixed z-[-1] size-full">
+            <div className="absolute h-full w-full animate-pulse bg-[radial-gradient(#ff000066_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_30%,transparent_100%)]" />
+          </div>
           <div className="isolate grid grow">{children}</div>
           <Footer />
 
