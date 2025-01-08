@@ -2,7 +2,7 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter as InterGoogle } from "next/font/google";
-import Providers from "@/app/_providers/providers";
+import Providers from "@/components/providers/providers";
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
 import localFont from "next/font/local";
