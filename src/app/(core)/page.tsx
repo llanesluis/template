@@ -1,10 +1,9 @@
 "use client";
 
 import { H1, H2, H3 } from "@/components/global/headings";
-import { Container, Section } from "@/components/global/wrappers";
+import { Wrapper, Section } from "@/components/global/wrappers";
 import { Button } from "@/components/ui/button";
 import { LoadingButton } from "@/components/ui/loading-button";
-import { Send } from "lucide-react";
 import { useState } from "react";
 
 export default function Home() {
@@ -12,7 +11,7 @@ export default function Home() {
   return (
     <main>
       <Section>
-        <Container>
+        <Wrapper>
           <H1>Hello World! h1</H1>
           <p>
             Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
@@ -35,7 +34,7 @@ export default function Home() {
           <LoadingButton isLoading={isLoading} variant={"destructive"}>
             Loading button
           </LoadingButton>
-        </Container>
+        </Wrapper>
       </Section>
     </main>
   );

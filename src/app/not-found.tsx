@@ -1,4 +1,4 @@
-import { Container, Section } from "@/components/global/wrappers";
+import { Wrapper, Section } from "@/components/global/wrappers";
 import { Button } from "@/components/ui/button";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
@@ -7,7 +7,7 @@ export default function RootNotFound() {
   return (
     <main>
       <Section className="h-full">
-        <Container className="grid place-content-center gap-4 font-mono max-sm:place-items-start sm:text-center">
+        <Wrapper className="grid place-content-center gap-4 font-mono max-sm:place-items-start sm:text-center">
           <h1 className="text-4xl font-bold">404 - Page Not Found</h1>
           <p className="text-muted-foreground">
             The page you are looking for does not exist.
@@ -17,7 +17,7 @@ export default function RootNotFound() {
             <MoveLeft />
             <Link href={"/"}>Go back home</Link>
           </Button>
-        </Container>
+        </Wrapper>
       </Section>
     </main>
   );

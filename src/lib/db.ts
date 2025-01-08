@@ -13,4 +13,4 @@
 
 // export default prisma;
 
-// from: https://vercel.com/guides/nextjs-prisma-postgres
+// taken from: https://vercel.com/guides/nextjs-prisma-postgres

@@ -115,10 +115,7 @@ export default function ThemeSelector() {
         onClick={() => setTheme("light")}
         aria-checked={theme === "light"}
         aria-label="Switch to light theme"
-        className={cn(
-          "animation rounded-full p-2",
-          theme === "light" && "bg-muted",
-        )}
+        className={cn("rounded-full p-2", theme === "light" && "bg-muted")}
         data-theme-switcher="true"
         role="radio"
         type="button"
@@ -130,10 +127,7 @@ export default function ThemeSelector() {
         onClick={() => setTheme("system")}
         aria-checked={theme === "system"}
         aria-label="Switch to system theme"
-        className={cn(
-          "animation rounded-full p-2",
-          theme === "system" && "bg-muted",
-        )}
+        className={cn("rounded-full p-2", theme === "system" && "bg-muted")}
         data-theme-switcher="true"
         role="radio"
         type="button"
@@ -145,10 +139,7 @@ export default function ThemeSelector() {
         onClick={() => setTheme("dark")}
         aria-checked={theme === "dark"}
         aria-label="Switch to dark theme"
-        className={cn(
-          "animation rounded-full p-2",
-          theme === "dark" && "bg-muted",
-        )}
+        className={cn("rounded-full p-2", theme === "dark" && "bg-muted")}
         data-theme-switcher="true"
         role="radio"
         type="button"

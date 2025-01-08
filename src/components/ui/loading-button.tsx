@@ -15,7 +15,7 @@ export function LoadingButton({ isLoading, children, ...props }: Props) {
       </span>
       <span
         className={cn(
-          "loading animate-spin",
+          "loader animate-spin",
           isLoading ? "visible" : "invisible",
         )}
       >

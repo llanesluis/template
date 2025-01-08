@@ -2,20 +2,20 @@ import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter as InterGoogle } from "next/font/google";
-import Providers from "@/app/_components/providers/providers";
+import Providers from "@/app/_providers/providers";
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
 import localFont from "next/font/local";
 import { DynamicScreenDevTools } from "@/components/devtools/screen-devtools";
 
-// La fuente Inter que tiene google no soporta los cambios nuevos
-// de la nueva version de Inter
+// Inter font from Google doesn't support the changes
+// from the new version of Inter (As of today 01/25)
 const interGoogle = InterGoogle({ subsets: ["latin"] });
 
-// Esta fuente local fue descargada desde la página oficial
-// https://rsms.me/inter/download/ y tuvo que ser self-hosted
-// nota: no todos los navegadores soportan la variable asi que debe configurarse
-// con una regla @supports de css (en el archivo globals.css)
+// This local font was downloaded from the official website
+// https://rsms.me/inter/download/ and had to be self-hosted
+// note: not all browsers support the variable font, so it must be configured
+// with a CSS @supports rule (in the globals.css file)
 const interLocal = localFont({
   src: "../fonts/Inter/InterVariable.woff2",
 });
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scroll-smooth antialiased selection:bg-green-300 dark:selection:bg-green-900"
+      className="scroll-smooth antialiased selection:bg-neutral-300 dark:selection:bg-neutral-600"
       suppressHydrationWarning
     >
       <body
@@ -44,9 +44,11 @@ export default function RootLayout({
       >
         <Providers>
           <Navbar />
+          {/* background effect */}
           <div className="fixed z-[-1] size-full">
             <div className="absolute h-full w-full animate-pulse bg-[radial-gradient(#ff000066_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_30%,transparent_100%)]" />
           </div>
+
           <div className="isolate grid grow">{children}</div>
           <Footer />
 

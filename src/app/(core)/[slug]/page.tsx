@@ -4,11 +4,11 @@ export async function generateStaticParams() {
 
 interface Props {
   // params are always parsed as strings by default
-  params: Promise<{ id: string }>;
+  params: Promise<{ slug: string }>;
 }
 
 export default async function Page({ params }: Props) {
-  const { id } = await params;
+  const { slug } = await params;
 
-  return <div>{id}</div>;
+  return <div>{slug}</div>;
 }

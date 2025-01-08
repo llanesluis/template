@@ -13,7 +13,7 @@ export function Section({
   );
 }
 
-export function Container({
+export function Wrapper({
   children,
   className,
   ...props
