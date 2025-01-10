@@ -1,10 +1,10 @@
 import { ThemeProvider } from "./theme-provider";
 
-interface providersProps {
+interface ProvidersProps {
   children: React.ReactNode;
 }
 
-export default function Providers({ children }: providersProps) {
+export default function Providers({ children }: ProvidersProps) {
   return (
     <ThemeProvider
       attribute="class"
