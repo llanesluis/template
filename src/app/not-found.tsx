@@ -1,4 +1,4 @@
-import { Wrapper, Section } from "@/components/global/wrappers";
+import { Wrapper, Section } from "@/components/wrappers";
 import { Button } from "@/components/ui/button";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";

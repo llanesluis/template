@@ -1,5 +1,5 @@
-import { H1 } from "@/components/global/headings";
-import { Wrapper, Section } from "@/components/global/wrappers";
+import { H1 } from "@/components/headings";
+import { Wrapper, Section } from "@/components/wrappers";
 import CommaSeparatedInput from "./_components/comma-separated-input";
 
 export default function ContactPage() {

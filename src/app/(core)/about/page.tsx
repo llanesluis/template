@@ -1,5 +1,5 @@
-import { H1, H2, H3 } from "@/components/global/headings";
-import { Wrapper, Section } from "@/components/global/wrappers";
+import { H1, H2, H3 } from "@/components/headings";
+import { Wrapper, Section } from "@/components/wrappers";
 
 export default function AboutPage() {
   return (

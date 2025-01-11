@@ -1,6 +1,6 @@
-import ExternalLink from "@/components/global/external-link";
-import VisuallyHidden from "@/components/global/visually-hidden";
-import { Wrapper } from "@/components/global/wrappers";
+import ExternalLink from "@/components/external-link";
+import VisuallyHidden from "@/components/visually-hidden";
+import { Wrapper } from "@/components/wrappers";
 import Link from "next/link";
 import MobileNavigation from "./mobile-navigation";
 import MainNavigation from "./main-navigation";

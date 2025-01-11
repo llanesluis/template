@@ -1,7 +1,7 @@
 "use client";
 
-import { H1, H2, H3 } from "@/components/global/headings";
-import { Wrapper, Section } from "@/components/global/wrappers";
+import { H1, H2, H3 } from "@/components/headings";
+import { Wrapper, Section } from "@/components/wrappers";
 import { Button } from "@/components/ui/button";
 import { LoadingButton } from "@/components/ui/loading-button";
 import { useState } from "react";
