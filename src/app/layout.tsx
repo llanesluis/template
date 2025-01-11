@@ -1,23 +1,16 @@
+import Footer from "@/app/_components/footer";
+import Navbar from "@/app/_components/navbar";
+import Providers from "@/app/providers";
+import { DynamicScreenDevTools } from "@/components/devtools/screen-devtools";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
-import { Inter as InterGoogle } from "next/font/google";
-import Providers from "@/components/providers/providers";
-import Footer from "@/app/_components/footer";
-import Navbar from "@/app/_components/navbar";
-import localFont from "next/font/local";
-import { DynamicScreenDevTools } from "@/components/devtools/screen-devtools";
+import { Geist, Geist_Mono } from "next/font/google";
 
-// Inter font from Google doesn't support the changes
-// from the new version of Inter (As of today 01/25)
-const interGoogle = InterGoogle({ subsets: ["latin"] });
-
-// This local font was downloaded from the official website
-// https://rsms.me/inter/download/ and had to be self-hosted
-// note: not all browsers support the variable font, so it must be configured
-// with a CSS @supports rule (in the globals.css file)
-const interLocal = localFont({
-  src: "../fonts/Inter/InterVariable.woff2",
+const geist = Geist({ subsets: ["latin"], variable: "--font-geist" });
+const geistMono = Geist_Mono({
+  subsets: ["latin"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
@@ -38,8 +31,9 @@ export default function RootLayout({
     >
       <body
         className={cn(
-          interLocal.className,
-          "isolate flex min-h-screen flex-col",
+          geist.variable,
+          geistMono.variable,
+          "isolate flex min-h-screen flex-col font-mono",
         )}
       >
         <Providers>
