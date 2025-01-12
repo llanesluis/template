@@ -6,7 +6,13 @@ import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-export function ScreenDevTools() {
+// Use the dynamic client only component to avoid hydration errors due to "window" object
+export const DynamicScreenDevTools = dynamic(async () => ScreenDevTools, {
+  ssr: false,
+});
+
+function ScreenDevTools() {
+  // This won't ship to your production build
   if (process.env.NODE_ENV === "production") return null;
 
   const [isShow, setIsShow] = useState(true);
@@ -59,21 +65,15 @@ export function ScreenDevTools() {
   );
 }
 
-export const DynamicScreenDevTools = dynamic(async () => ScreenDevTools, {
-  ssr: false,
-});
-
-export function ScreenSize() {
+function ScreenSize() {
   const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
-    function handleResize() {
-      setWindowWidth(window.innerWidth);
-    }
+    const handleResize = () => setWindowWidth(window.innerWidth);
 
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
-  }, [windowWidth]);
+  }, []);
 
   return (
     <div
@@ -100,7 +100,8 @@ export function ScreenSize() {
   );
 }
 
-export default function ThemeSelector() {
+// Btw, this theme selector is also ready to use as usual
+export function ThemeSelector() {
   const { theme, setTheme } = useTheme();
 
   return (
@@ -153,11 +154,8 @@ export default function ThemeSelector() {
 function LightThemeIcon() {
   return (
     <svg
-      className="with-icon_icon__MHUeb"
-      data-testid="geist-icon"
       fill="none"
       height="24"
-      shapeRendering="geometricPrecision"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -182,11 +180,8 @@ function LightThemeIcon() {
 function SystemThemeIcon() {
   return (
     <svg
-      className="with-icon_icon__MHUeb"
-      data-testid="geist-icon"
       fill="none"
       height="24"
-      shapeRendering="geometricPrecision"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -205,11 +200,8 @@ function SystemThemeIcon() {
 function DarkThemeIcon() {
   return (
     <svg
-      className="with-icon_icon__MHUeb"
-      data-testid="geist-icon"
       fill="none"
       height="24"
-      shapeRendering="geometricPrecision"
       stroke="currentColor"
       strokeLinecap="round"
       strokeLinejoin="round"

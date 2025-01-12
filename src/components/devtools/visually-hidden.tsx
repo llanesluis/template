@@ -1,37 +1,39 @@
 "use client";
 
-import React from "react";
+import React, { HTMLAttributes, useEffect, useState } from "react";
 
-interface VisuallyHiddenProps extends React.HTMLAttributes<HTMLSpanElement> {}
+interface VisuallyHiddenProps extends HTMLAttributes<HTMLSpanElement> {}
 
 export default function VisuallyHidden({
   children,
   ...props
 }: VisuallyHiddenProps) {
-  const [forceShow, setForceShow] = React.useState(false);
+  const [forceShow, setForceShow] = useState(false);
 
-  React.useEffect(() => {
-    if (process.env.NODE_ENV !== "production") {
-      const handleKeyDown = (ev: KeyboardEvent) => {
-        if (ev.key === "Alt") {
-          setForceShow(true);
-        }
-      };
+  useEffect(() => {
+    // In prodcution children will be kept hidden
+    // thanks to the "sr-only" classname wrapping children
+    if (process.env.NODE_ENV === "production") return;
 
-      const handleKeyUp = (ev: KeyboardEvent) => {
-        if (ev.key === "Alt") {
-          setForceShow(false);
-        }
-      };
+    const handleKeyDown = (ev: KeyboardEvent) => {
+      if (ev.key === "Alt") {
+        setForceShow(true);
+      }
+    };
 
-      window.addEventListener("keydown", handleKeyDown);
-      window.addEventListener("keyup", handleKeyUp);
+    const handleKeyUp = (ev: KeyboardEvent) => {
+      if (ev.key === "Alt") {
+        setForceShow(false);
+      }
+    };
 
-      return () => {
-        window.removeEventListener("keydown", handleKeyDown);
-        window.removeEventListener("keyup", handleKeyUp);
-      };
-    }
+    window.addEventListener("keydown", handleKeyDown);
+    window.addEventListener("keyup", handleKeyUp);
+
+    return () => {
+      window.removeEventListener("keydown", handleKeyDown);
+      window.removeEventListener("keyup", handleKeyUp);
+    };
   }, []);
 
   if (forceShow) {
