@@ -33,18 +33,15 @@ export default function RootLayout({
         className={cn(
           geist.variable,
           geistMono.variable,
-          "isolate flex min-h-screen flex-col font-mono",
+          "flex min-h-svh flex-col font-mono antialiased",
         )}
       >
         <Providers>
-          <Navbar />
-          {/* background effect */}
-          <div className="fixed z-[-1] size-full">
-            <div className="absolute h-full w-full animate-pulse bg-[radial-gradient(#ff000066_1px,transparent_1px)] [background-size:16px_16px] [mask-image:radial-gradient(ellipse_100%_100%_at_50%_0%,#000_30%,transparent_100%)]" />
+          <div className="flex flex-1 flex-col">
+            <Navbar />
+            <main className="isolate grid flex-1">{children}</main>
+            <Footer />
           </div>
-
-          <div className="isolate grid grow">{children}</div>
-          <Footer />
 
           <DynamicScreenDevTools />
         </Providers>

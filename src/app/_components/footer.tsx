@@ -1,13 +1,25 @@
-import { Wrapper } from "@/components/wrappers";
+import ExternalLink from "@/components/ui/external-link";
+import { ContainerWrapper } from "@/components/ui/wrappers";
 
 export default function Footer() {
   return (
-    <footer className="h-16 border-t">
-      <Wrapper className="grid place-items-center">
-        <p className="text-sm text-muted-foreground">
-          &copy; {new Date().getFullYear()} luisllaboj. All rights reserved.
-        </p>
-      </Wrapper>
+    <footer className="border-t">
+      <ContainerWrapper>
+        <div className="flex items-center justify-between py-4">
+          <p className="text-sm text-muted-foreground">
+            &copy; {new Date().getFullYear()} llanesluis.
+          </p>
+
+          <ExternalLink
+            title="GitHub"
+            href="https://github.com/llanesluis/template"
+            showIcon
+            className="text-sm text-muted-foreground"
+          >
+            github
+          </ExternalLink>
+        </div>
+      </ContainerWrapper>
     </footer>
   );
 }

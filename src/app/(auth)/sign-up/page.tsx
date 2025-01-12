@@ -1,3 +1,3 @@
 export default async function SignUpPage() {
-  return <main>SignUpPage</main>;
+  return <div>SignUpPage</div>;
 }

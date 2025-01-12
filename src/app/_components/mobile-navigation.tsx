@@ -1,10 +1,15 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import { Sheet, SheetContent } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTitle,
+} from "@/components/ui/sheet";
 import { NAV_LINKS } from "@/utils/constants";
 import { twConfig } from "@/lib/utils";
-import { MenuIcon } from "lucide-react";
+import { MenuIcon, Sidebar } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -34,14 +39,21 @@ export default function MobileNavigation() {
         variant={"link"}
         onClick={() => setIsOpen(true)}
       >
-        <MenuIcon />
+        <Sidebar />
       </Button>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>
-        <SheetContent>
-          <nav className="flex flex-col gap-4">
+        <SheetContent className="min-w-[70%]">
+          {/* if i don't put a SheetTitle it complains */}
+          <SheetTitle />
+
+          <nav className="group flex h-full flex-col justify-end gap-8 py-20">
             {NAV_LINKS.map(({ href, title }) => (
-              <Link key={href} href={href} className="p-4 hover:bg-muted">
+              <Link
+                key={href}
+                href={href}
+                className="text-4xl font-bold lowercase transition-all ease-out hover:translate-x-2 hover:text-neutral-500"
+              >
                 {title}
               </Link>
             ))}

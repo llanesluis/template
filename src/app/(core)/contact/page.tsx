@@ -1,18 +1,21 @@
-import { H1 } from "@/components/headings";
-import { Wrapper, Section } from "@/components/wrappers";
+import { H1 } from "@/components/ui/headings";
+import { ContainerWrapper, SectionWrapper } from "@/components/ui/wrappers";
 import CommaSeparatedInput from "./_components/comma-separated-input";
 
 export default function ContactPage() {
   return (
-    <main>
-      <Section>
-        <Wrapper>
+    <>
+      <ContainerWrapper>
+        <SectionWrapper>
           <H1>Contact me</H1>
           <p className="text-pretty">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
             nisi maxime, mollitia quos unde molestiae fugit quisquam
             exercitationem, laudantium aliquid?
           </p>
+        </SectionWrapper>
+
+        <SectionWrapper>
           <form className="flex flex-col gap-4">
             <label htmlFor="name">Name</label>
             <input type="text" id="name" name="name" />
@@ -26,8 +29,8 @@ export default function ContactPage() {
             </label>
             <button type="submit">Send</button>
           </form>
-        </Wrapper>
-      </Section>
-    </main>
+        </SectionWrapper>
+      </ContainerWrapper>
+    </>
   );
 }

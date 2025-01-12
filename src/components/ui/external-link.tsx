@@ -14,19 +14,21 @@ export default function ExternalLink({
   showIcon,
   ...rest
 }: ExternalLinkProps) {
-  if (!href || !children) return null;
+  if (!children) return null;
 
   return (
     <a
       title={title}
       href={href}
-      className={cn("flex w-fit items-center justify-between", className)}
+      className={cn("group flex w-fit items-center justify-between", className)}
       rel="noopener noreferrer"
       target="_blank"
       {...rest}
     >
-      {children}
-      {showIcon && <ArrowUpRight size={14} />}
+      <span className="group-hover:underline">{children}</span>
+      {showIcon && (
+        <ArrowUpRight size={14} className="transition group-hover:rotate-45" />
+      )}
     </a>
   );
 }
