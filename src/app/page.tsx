@@ -9,85 +9,19 @@ export default function HomePage() {
         <ContainerWrapper className="wrapper relative">
           <BackgroundEffect />
 
-          <SectionWrapper>
-            <H1>Hello World! h1</H1>
-            <p>
+          <SectionWrapper className="space-y-2">
+            <H1>Hello World!</H1>
+            <p className="text-muted-foreground">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
             </p>
-            <H2>Hello World! h2</H2>
-            <p>
+            <H2>Hello World!</H2>
+            <p className="text-muted-foreground">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
             </p>
-            <H3>Hello World! h3</H3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-          </SectionWrapper>
-        </ContainerWrapper>
-      </section>
-
-      <section>
-        <ContainerWrapper className="wrapper">
-          <SectionWrapper>
-            <H1>Hello World! h1</H1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H2>Hello World! h2</H2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H3>Hello World! h3</H3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-          </SectionWrapper>
-        </ContainerWrapper>
-      </section>
-
-      <section>
-        <ContainerWrapper className="wrapper">
-          <SectionWrapper>
-            <H1>Hello World! h1</H1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H2>Hello World! h2</H2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H3>Hello World! h3</H3>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-          </SectionWrapper>
-        </ContainerWrapper>
-      </section>
-
-      <section>
-        <ContainerWrapper className="wrapper">
-          <SectionWrapper>
-            <H1>Hello World! h1</H1>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H2>Hello World! h2</H2>
-            <p>
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H3>Hello World! h3</H3>
-            <p>
+            <H3>Hello World!</H3>
+            <p className="text-muted-foreground">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit.
               Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
             </p>
