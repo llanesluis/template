@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { ChevronDown, ChevronUp } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import { useTheme } from "next-themes";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
@@ -20,44 +20,29 @@ function ScreenDevTools() {
   return (
     <div
       className={cn(
-        "group isolate",
-        "fixed bottom-10 left-10 z-[1] transition-all",
+        "fixed bottom-10 left-10 isolate z-[1] transition-all",
         !isShow && "bottom-0 translate-y-full",
       )}
     >
       {/* Toggle show-hide button */}
       <button
+        onClick={() => setIsShow(!isShow)}
         className={cn(
           "absolute left-[50%] top-[-50%] z-[-1] translate-x-[-50%]",
           "size-10 rounded-full border bg-muted shadow",
+          isShow && "translate-y-[10%]",
         )}
-        onClick={() => setIsShow(!isShow)}
       >
-        {isShow && (
-          <ChevronDown
-            className={cn(
-              "m-auto size-6 translate-y-[-25%]",
-              "active:scale-90",
-            )}
-          />
-        )}
-        {!isShow && (
-          <ChevronUp
-            className={cn(
-              "m-auto size-6 translate-y-[-25%]",
-              "active:scale-90",
-            )}
-          />
-        )}
+        <ChevronDown
+          className={cn(
+            "m-auto size-6 translate-y-[-25%] rotate-0 transition-all duration-200 active:scale-90",
+            !isShow && "rotate-180",
+          )}
+        />
       </button>
 
       {/* DevTools */}
-      <div
-        className={cn(
-          "flex justify-between gap-1",
-          "rounded-full border bg-muted p-1 font-mono shadow",
-        )}
-      >
+      <div className="flex justify-between gap-1 rounded-full border bg-muted p-1 shadow">
         <ScreenSize />
         <ThemeSelector />
       </div>
@@ -91,7 +76,7 @@ function ScreenSize() {
         <div className="hidden 2xl:block">2xl</div>
       </div>
 
-      <hr className="h-full w-[2px] bg-muted" />
+      <div className="h-full w-[2px] bg-muted" />
 
       <div>
         <span className="font-semibold">{windowWidth}</span>px
@@ -100,16 +85,13 @@ function ScreenSize() {
   );
 }
 
-// Btw, this theme selector is also ready to use as usual
+// Btw, this theme selector is also ready to use as usual (with next-themes)
 export function ThemeSelector() {
   const { theme, setTheme } = useTheme();
 
   return (
     <div
-      className={cn(
-        "inline-flex w-fit items-center gap-1",
-        "rounded-full border bg-background p-1",
-      )}
+      className="inline-flex w-fit items-center gap-1 rounded-full border bg-background p-1"
       role="radiogroup"
     >
       <button
