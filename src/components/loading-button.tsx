@@ -1,7 +1,6 @@
-import { Children, ComponentProps } from "react";
-import { Button, ButtonProps } from "./button";
-import { Loader } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { Loader } from "lucide-react";
+import { Button, ButtonProps } from "./ui/button";
 
 interface Props extends ButtonProps {
   isLoading?: boolean;

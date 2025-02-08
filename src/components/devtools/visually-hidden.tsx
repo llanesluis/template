@@ -1,6 +1,6 @@
 "use client";
 
-import React, { HTMLAttributes, useEffect, useState } from "react";
+import { HTMLAttributes, useEffect, useState } from "react";
 
 interface VisuallyHiddenProps extends HTMLAttributes<HTMLSpanElement> {}
 

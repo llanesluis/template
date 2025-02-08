@@ -1,4 +1,4 @@
-import { ContainerWrapper } from "@/components/ui/wrappers";
+import { ContainerWrapper } from "@/components/wrappers";
 import { ReactNode } from "react";
 
 interface CoreLayoutProps {

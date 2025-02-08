@@ -1,6 +1,6 @@
-import ExternalLink from "@/components/ui/external-link";
+import ExternalLink from "@/components/external-link";
 import VisuallyHidden from "@/components/devtools/visually-hidden";
-import { ContainerWrapper } from "@/components/ui/wrappers";
+import { ContainerWrapper } from "@/components/wrappers";
 import Link from "next/link";
 import MobileNavigation from "./mobile-navigation";
 import MainNavigation from "./main-navigation";

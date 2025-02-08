@@ -1,6 +1,6 @@
-import BackgroundEffect from "@/components/ui/background-effect";
-import { H1, H2, H3 } from "@/components/ui/headings";
-import { ContainerWrapper, SectionWrapper } from "@/components/ui/wrappers";
+import BackgroundEffect from "@/components/background-effect";
+import { H1, H2, H3 } from "@/components/headings";
+import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 
 export default function HomePage() {
   return (

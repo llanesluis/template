@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ContainerWrapper } from "@/components/ui/wrappers";
+import { ContainerWrapper } from "@/components/wrappers";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
 

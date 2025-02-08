@@ -1,5 +1,5 @@
-import ExternalLink from "@/components/ui/external-link";
-import { ContainerWrapper } from "@/components/ui/wrappers";
+import ExternalLink from "@/components/external-link";
+import { ContainerWrapper } from "@/components/wrappers";
 
 export default function Footer() {
   return (

@@ -1,5 +1,5 @@
-import { H1 } from "@/components/ui/headings";
-import { ContainerWrapper, SectionWrapper } from "@/components/ui/wrappers";
+import { H1 } from "@/components/headings";
+import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 
 export default function BlogPage() {
   return (

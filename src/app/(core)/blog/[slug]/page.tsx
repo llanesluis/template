@@ -1,5 +1,4 @@
-import { ContainerWrapper, SectionWrapper } from "@/components/ui/wrappers";
-import { Section } from "lucide-react";
+import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 
 export async function generateStaticParams() {
   return [{ id: "1" }, { id: "2" }, { id: "3" }];
