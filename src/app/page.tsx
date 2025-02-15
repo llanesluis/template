@@ -1,6 +1,7 @@
 import BackgroundEffect from "@/components/background-effect";
 import { H1, H2, H3 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
+import FormActionExample from "./page.client";
 
 export default function HomePage() {
   return (
@@ -26,6 +27,9 @@ export default function HomePage() {
               Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
             </p>
           </SectionWrapper>
+
+          {/* useFormAction + Server Action + FormData + Clousure over React State */}
+          <FormActionExample />
         </ContainerWrapper>
       </section>
     </>
