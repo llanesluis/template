@@ -56,7 +56,7 @@ export default function FormActionExample() {
       </div>
 
       <p>
-        Author in uppercase:
+        Author in uppercase:{" "}
         <span className="text-red-500">{state?.author}</span>
       </p>
       <p>
