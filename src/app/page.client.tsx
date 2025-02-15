@@ -36,7 +36,7 @@ export default function FormActionExample() {
             className="bg-muted p-1"
           >
             <option hidden>select one</option>
-            <option value="anonymus">anonymus</option>
+            <option value="anonymous">anonymous</option>
             <option value="luis">luis</option>
             <option value="llanesluis">llanesluis</option>
           </select>
