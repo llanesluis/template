@@ -25,7 +25,7 @@ export default function FormActionExample() {
   return (
     <section className="flex flex-col gap-2 bg-muted/10 p-2 outline-dashed outline-muted backdrop-blur">
       <H3 className="mb-2 text-red-500">
-        useFormAction + Server Action + FormData + Clousure over React State
+        useActionState + Server Action + FormData + Clousure over React State
       </H3>
 
       <div className="flex flex-col gap-x-8 gap-y-4 md:flex-row">
