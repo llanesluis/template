@@ -28,8 +28,8 @@ export default function FormActionExample() {
         useFormAction + Server Action + FormData + Clousure over React State
       </H3>
 
-      <div className="flex flex-col gap-4 sm:items-start md:flex-row">
-        <label className="flex flex-col gap-1">
+      <div className="flex flex-col gap-x-8 gap-y-4 md:flex-row">
+        <label className="flex flex-col gap-2">
           Author: React State
           <select
             onChange={(e) => setAuthor(e.target.value)}
@@ -43,7 +43,7 @@ export default function FormActionExample() {
         </label>
 
         <form action={addPostAction}>
-          <label className="flex flex-col gap-1">
+          <label className="flex flex-col gap-2">
             Title: Input value from FormData
             <input
               id="title"
@@ -56,7 +56,7 @@ export default function FormActionExample() {
       </div>
 
       <p>
-        Author in uppercase:{" "}
+        Author in uppercase:
         <span className="text-red-500">{state?.author}</span>
       </p>
       <p>
