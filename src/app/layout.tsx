@@ -1,7 +1,8 @@
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
-import Providers from "@/app/providers";
+import Providers, { SessionProvider } from "@/app/providers";
 import { DynamicScreenDevTools } from "@/components/devtools/screen-devtools";
+import { getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
@@ -23,6 +24,9 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // don't await, get the promise instead (still opts out of static rendering tho)
+  const sessionPromise = getSession();
+
   return (
     <html
       lang="en"
@@ -37,13 +41,15 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <div className="flex flex-1 flex-col">
-            <Navbar />
-            <main className="isolate grid flex-1">{children}</main>
-            <Footer />
-          </div>
+          <SessionProvider session={sessionPromise}>
+            <div className="flex flex-1 flex-col">
+              <Navbar />
+              <main className="isolate grid flex-1">{children}</main>
+              <Footer />
+            </div>
 
-          <DynamicScreenDevTools />
+            <DynamicScreenDevTools />
+          </SessionProvider>
         </Providers>
       </body>
     </html>

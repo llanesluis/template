@@ -1,10 +1,14 @@
 "use client";
 
-import { useActionState, useState } from "react";
+import { use, useActionState, useState } from "react";
 import { addPost } from "./actions";
 import { H3 } from "@/components/headings";
+import { SessionContext } from "./providers";
 
 export default function FormActionExample() {
+  const sessionPromise = use(SessionContext);
+  const session = use(sessionPromise);
+
   const [author, setAuthor] = useState("");
 
   const noHiddenInputAction = async (
@@ -50,6 +54,7 @@ export default function FormActionExample() {
               name="title"
               placeholder="Title"
               className="bg-muted p-1"
+              defaultValue={session.user}
             />
           </label>
         </form>

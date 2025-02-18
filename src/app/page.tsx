@@ -2,6 +2,7 @@ import BackgroundEffect from "@/components/background-effect";
 import { H1, H2, H3 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 import FormActionExample from "./page.client";
+import { Suspense } from "react";
 
 export default function HomePage() {
   return (
@@ -28,10 +29,21 @@ export default function HomePage() {
             </p>
           </SectionWrapper>
 
-          {/* useFormAction + Server Action + FormData + Clousure over React State */}
-          <FormActionExample />
+          {/* if Suspense is omitted the whole page will suspend*/}
+          <Suspense fallback={<FormActionExampleFallback />}>
+            {/* useFormAction + Server Action + FormData + Clousure over React State */}
+            <FormActionExample />
+          </Suspense>
         </ContainerWrapper>
       </section>
     </>
+  );
+}
+
+function FormActionExampleFallback() {
+  return (
+    <div className="flex h-[232px] animate-pulse place-items-center justify-center bg-muted/70">
+      Loading...
+    </div>
   );
 }
