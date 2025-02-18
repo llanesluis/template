@@ -1,11 +1,17 @@
 import { H1, H2, H3 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
+import { Suspense } from "react";
+import ClientComponent from "./page.client";
 
 export default function AboutPage() {
   return (
     <>
       <ContainerWrapper>
         <SectionWrapper>
+          <Suspense fallback={<div className="animate-pulse">Loading...</div>}>
+            <ClientComponent />
+          </Suspense>
+
           <H1>About</H1>
           <p className="text-pretty">
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo
