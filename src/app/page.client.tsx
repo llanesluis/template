@@ -1,12 +1,14 @@
 "use client";
 
+import { H3 } from "@/components/headings";
 import { use, useActionState, useState } from "react";
 import { addPost } from "./actions";
-import { H3 } from "@/components/headings";
-import { SessionContext } from "./providers";
 
-export default function FormActionExample() {
-  const sessionPromise = use(SessionContext);
+export default function FormActionExample({
+  sessionPromise,
+}: {
+  sessionPromise: Promise<{ user: string }>;
+}) {
   const session = use(sessionPromise);
 
   const [author, setAuthor] = useState("");

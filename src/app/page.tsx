@@ -3,8 +3,12 @@ import { H1, H2, H3 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 import FormActionExample from "./page.client";
 import { Suspense } from "react";
+import { getSession } from "@/lib/session";
 
 export default function HomePage() {
+  // don't await, get the promise instead (still opts *this page* out of static rendering tho)
+  const sessionPromise = getSession();
+
   return (
     <>
       <section className="border-b">
@@ -32,7 +36,7 @@ export default function HomePage() {
           {/* if Suspense is omitted the whole page will suspend*/}
           <Suspense fallback={<FormActionExampleFallback />}>
             {/* useFormAction + Server Action + FormData + Clousure over React State */}
-            <FormActionExample />
+            <FormActionExample sessionPromise={sessionPromise} />
           </Suspense>
         </ContainerWrapper>
       </section>
