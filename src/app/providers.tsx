@@ -2,7 +2,7 @@
 
 import { getSession } from "@/lib/session";
 import { ThemeProvider } from "next-themes";
-import { createContext, ReactNode } from "react";
+import { createContext, ReactNode, use } from "react";
 
 interface ProvidersProps {
   children: React.ReactNode;
@@ -21,7 +21,11 @@ export default function Providers({ children }: ProvidersProps) {
   );
 }
 
-export const SessionContext = createContext<Promise<{ user: string }>>(null!);
+type SessionContextType = Promise<{ user: string }>;
+
+export const SessionContext = createContext<SessionContextType | undefined>(
+  undefined,
+);
 
 export function SessionProvider({
   children,
@@ -31,4 +35,14 @@ export function SessionProvider({
   session: Promise<{ user: string }>;
 }) {
   return <SessionContext value={session}>{children}</SessionContext>;
+}
+
+export function useSession() {
+  const context = use(SessionContext);
+
+  if (context === undefined) {
+    throw Error("'useSession' must be used within a SessionProvider");
+  }
+
+  return context;
 }

@@ -3,10 +3,10 @@
 import { use, useActionState, useState } from "react";
 import { addPost } from "./actions";
 import { H3 } from "@/components/headings";
-import { SessionContext } from "./providers";
+import { SessionContext, useSession } from "./providers";
 
 export default function FormActionExample() {
-  const sessionPromise = use(SessionContext);
+  const sessionPromise = useSession();
   const session = use(sessionPromise);
 
   const [author, setAuthor] = useState("");
