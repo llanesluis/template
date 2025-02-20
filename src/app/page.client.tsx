@@ -27,7 +27,7 @@ export default function FormActionExample() {
   const [state, addPostAction] = useActionState(noHiddenInputAction, null);
 
   return (
-    <section className="flex flex-col gap-2 bg-muted/10 p-2 outline-dashed outline-muted backdrop-blur">
+    <section className="flex flex-col gap-2 bg-muted/10 p-2 outline-dashed outline-muted backdrop-blur-sm">
       <H3 className="mb-2 text-red-500">
         useActionState + Server Action + FormData + Clousure over React State
       </H3>

@@ -1,15 +1,9 @@
 "use client";
 
 import { Button } from "@/components/ui/button";
-import {
-  Sheet,
-  SheetContent,
-  SheetHeader,
-  SheetTitle,
-} from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { NAV_LINKS } from "@/utils/constants";
-import { twConfig } from "@/lib/utils";
-import { MenuIcon, Sidebar } from "lucide-react";
+import { Sidebar } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
@@ -20,10 +14,20 @@ export default function MobileNavigation() {
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth > parseInt(twConfig.theme.screens.md)) {
+      const styles = getComputedStyle(document.documentElement);
+      const remPixels = styles.fontSize;
+
+      const breakpointMd = styles
+        .getPropertyValue("--breakpoint-md")
+        .slice(0, -3); // removes "rem" from the end;
+
+      const breakpointMdInPx = parseInt(breakpointMd) * parseInt(remPixels);
+
+      if (window.innerWidth > breakpointMdInPx) {
         setIsOpen(false);
       }
     };
+
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -47,7 +51,7 @@ export default function MobileNavigation() {
           {/* if i don't put a SheetTitle it complains */}
           <SheetTitle />
 
-          <nav className="group flex h-full flex-col justify-end gap-8 py-20">
+          <nav className="group flex h-full flex-col justify-end gap-8 px-8 py-20">
             {NAV_LINKS.map(({ href, title }) => (
               <Link
                 key={href}

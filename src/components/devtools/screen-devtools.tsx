@@ -20,7 +20,7 @@ function ScreenDevTools() {
   return (
     <div
       className={cn(
-        "fixed bottom-10 left-10 isolate z-[1] transition-all",
+        "fixed bottom-10 left-10 isolate z-1 transition-all",
         !isShow && "bottom-0 translate-y-full",
       )}
     >
@@ -29,7 +29,7 @@ function ScreenDevTools() {
         onClick={() => setIsShow(!isShow)}
         className={cn(
           "absolute left-[50%] top-[-50%] z-[-1] translate-x-[-50%]",
-          "size-10 rounded-full border bg-muted shadow",
+          "size-10 rounded-full border bg-muted shadow-sm",
           isShow && "translate-y-[10%]",
         )}
       >
@@ -42,7 +42,7 @@ function ScreenDevTools() {
       </button>
 
       {/* DevTools */}
-      <div className="flex justify-between gap-1 rounded-full border bg-muted p-1 shadow">
+      <div className="flex justify-between gap-1 rounded-full border bg-muted p-1 shadow-sm">
         <ScreenSize />
         <ThemeSelector />
       </div>
