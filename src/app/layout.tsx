@@ -1,8 +1,7 @@
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
-import Providers, { SessionProvider } from "@/app/providers";
+import Providers from "@/app/providers";
 import { DynamicScreenDevTools } from "@/components/devtools/screen-devtools";
-import { getSession } from "@/lib/session";
 import { cn } from "@/lib/utils";
 import "@/styles/globals.css";
 import type { Metadata } from "next";
