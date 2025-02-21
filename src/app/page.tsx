@@ -42,8 +42,8 @@ export default function HomePage() {
 
 function FormActionExampleFallback() {
   return (
-    <div className="flex h-[232px] animate-pulse place-items-center justify-center bg-muted/70">
-      Loading...
+    <div className="bg-muted/70 flex h-[232px] animate-pulse place-items-center justify-center">
+      Simulated loading...
     </div>
   );
 }

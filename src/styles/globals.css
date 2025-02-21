@@ -124,6 +124,8 @@
   --color-chart-2: var(--chart-2);
   --color-chart-1: var(--chart-1);
 
+  --radius-xl: calc(var(--radius) + 4px);
+
   @keyframes accordion-down {
     from {
       height: 0;
@@ -132,6 +134,7 @@
       height: var(--radix-accordion-content-height);
     }
   }
+
   @keyframes accordion-up {
     from {
       height: var(--radix-accordion-content-height);
@@ -140,9 +143,22 @@
       height: 0;
     }
   }
-  --radius-xl: calc(var(--radius) + 4px);
 }
 
+@theme {
+  --animate-blurred-fade-in: blurred-fade-in 0.8s ease-in-out;
+
+  @keyframes blurred-fade-in {
+    0% {
+      filter: blur(5px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0);
+      opacity: 1;
+    }
+  }
+}
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;

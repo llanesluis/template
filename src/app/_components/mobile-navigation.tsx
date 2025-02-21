@@ -43,7 +43,7 @@ export default function MobileNavigation() {
         variant={"link"}
         onClick={() => setIsOpen(true)}
       >
-        <Sidebar />
+        <Sidebar className="size-5" />
       </Button>
 
       <Sheet open={isOpen} onOpenChange={setIsOpen}>

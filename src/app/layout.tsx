@@ -37,7 +37,7 @@ export default function RootLayout({
         className={cn(
           geist.variable,
           geistMono.variable,
-          "flex min-h-svh flex-col font-mono antialiased",
+          "animate-blurred-fade-in flex min-h-svh flex-col font-mono antialiased",
         )}
       >
         <Providers>
