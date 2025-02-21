@@ -24,9 +24,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  // don't await, get the promise instead (still opts out of static rendering tho)
-  const sessionPromise = getSession();
-
   return (
     <html
       lang="en"
@@ -41,15 +38,13 @@ export default function RootLayout({
         )}
       >
         <Providers>
-          <SessionProvider session={sessionPromise}>
-            <div className="flex flex-1 flex-col">
-              <Navbar />
-              <main className="isolate grid flex-1">{children}</main>
-              <Footer />
-            </div>
+          <div className="flex flex-1 flex-col">
+            <Navbar />
+            <main className="isolate grid flex-1">{children}</main>
+            <Footer />
+          </div>
 
-            <DynamicScreenDevTools />
-          </SessionProvider>
+          <DynamicScreenDevTools />
         </Providers>
       </body>
     </html>

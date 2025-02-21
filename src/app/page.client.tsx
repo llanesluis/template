@@ -6,9 +6,6 @@ import { addPost } from "./actions";
 import { useSession } from "./providers";
 
 export default function FormActionExample() {
-  const sessionPromise = useSession();
-  const session = use(sessionPromise);
-
   const [author, setAuthor] = useState("");
 
   const noHiddenInputAction = async (
@@ -27,7 +24,7 @@ export default function FormActionExample() {
   const [state, addPostAction] = useActionState(noHiddenInputAction, null);
 
   return (
-    <section className="flex flex-col gap-2 bg-muted/10 p-2 outline-dashed outline-muted backdrop-blur-sm">
+    <section className="bg-muted/10 outline-muted flex flex-col gap-2 p-2 backdrop-blur-sm outline-dashed">
       <H3 className="mb-2 text-red-500">
         useActionState + Server Action + FormData + Clousure over React State
       </H3>
@@ -54,7 +51,6 @@ export default function FormActionExample() {
               name="title"
               placeholder="Title"
               className="bg-muted p-1"
-              defaultValue={session.user}
             />
           </label>
         </form>
