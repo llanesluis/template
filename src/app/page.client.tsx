@@ -24,7 +24,7 @@ export default function FormActionExample() {
 
   return (
     <section className="bg-muted/10 outline-muted flex flex-col gap-2 p-2 backdrop-blur-sm outline-dashed">
-      <H3 className="mb-2 text-red-500">
+      <H3 className="text-gradient mb-2">
         useActionState + Server Action + FormData + Clousure over React State
       </H3>
 
