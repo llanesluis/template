@@ -1,7 +1,11 @@
 import { cn } from "@/lib/utils";
 import { ComponentProps } from "react";
 
-export function H1({ children, className, ...props }: ComponentProps<"h1">) {
+export function H1({
+  children = "Heading 1",
+  className,
+  ...props
+}: ComponentProps<"h1">) {
   return (
     <h1
       className={cn(
@@ -16,7 +20,11 @@ export function H1({ children, className, ...props }: ComponentProps<"h1">) {
   );
 }
 
-export function H2({ children, className, ...props }: ComponentProps<"h2">) {
+export function H2({
+  children = "Heading 2",
+  className,
+  ...props
+}: ComponentProps<"h2">) {
   return (
     <h1
       className={cn(
@@ -31,7 +39,11 @@ export function H2({ children, className, ...props }: ComponentProps<"h2">) {
   );
 }
 
-export function H3({ children, className, ...props }: ComponentProps<"h3">) {
+export function H3({
+  children = "Heading 3",
+  className,
+  ...props
+}: ComponentProps<"h3">) {
   return (
     <h1
       className={cn(
