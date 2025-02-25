@@ -8,7 +8,7 @@ export default function StaticPage() {
   return (
     <>
       <ContainerWrapper>
-        <SectionWrapper>
+        <SectionWrapper className="space-y-4">
           <FreshnessTimer generatedAt={generatedAt} />
           <H1>Static Page</H1>
           <p className="text-muted-foreground text-pretty">
@@ -18,7 +18,7 @@ export default function StaticPage() {
           </p>
         </SectionWrapper>
 
-        <SectionWrapper>
+        <SectionWrapper className="space-y-4">
           <H2>
             Lorem ipsum dolor sit amet consectetur adipisicing dolor sit amet
             consectetur..

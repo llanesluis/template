@@ -1,12 +1,12 @@
-import { H1 } from "@/components/headings";
+import { H1, H2 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 import Link from "next/link";
 
 export default function BlogPage() {
   return (
     <ContainerWrapper>
-      <SectionWrapper>
-        <H1>Blog</H1>
+      <SectionWrapper className="space-y-4">
+        <H1>Blog - Static</H1>
         <p className="text-muted-foreground text-pretty">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
           nisi maxime, mollitia quos unde molestiae fugit quisquam
@@ -14,7 +14,8 @@ export default function BlogPage() {
         </p>
       </SectionWrapper>
 
-      <SectionWrapper>
+      <SectionWrapper className="space-y-4">
+        <H2>blog/[slug] - generateStaticParams() + dynamicParams = false</H2>
         <ol className="flex list-inside list-decimal flex-col gap-2">
           <li>
             <Link href={"/blog/1"} className="hover:text-muted-foreground">

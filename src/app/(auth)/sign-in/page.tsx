@@ -6,12 +6,13 @@ import { Suspense } from "react";
 export default async function SignInPage() {
   return (
     <ContainerWrapper>
-      <SectionWrapper>
+      <SectionWrapper className="space-y-4">
+        <H1>Sign In - Dynamic</H1>
+
         <Suspense fallback={<p className="animate-pulse">Loading user...</p>}>
           <CurrentUserServer />
         </Suspense>
 
-        <H1>Sign In - Dynamic</H1>
         <p className="text-muted-foreground text-pretty">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
           nisi maxime, mollitia quos unde molestiae fugit quisquam

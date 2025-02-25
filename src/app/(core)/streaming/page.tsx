@@ -13,7 +13,7 @@ export default async function StreamingPage() {
   return (
     <>
       <ContainerWrapper>
-        <SectionWrapper>
+        <SectionWrapper className="space-y-4">
           <H1>Contact me - Dynamic & Streaming</H1>
           <p className="text-muted-foreground text-pretty">
             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
