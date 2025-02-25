@@ -7,7 +7,7 @@ export async function getSession() {
   // comment the next line to generate static pages, even if you don't make use of cookies
   cookies();
 
-  await new Promise((r) => setTimeout(r, 5000));
+  await new Promise((r) => setTimeout(r, 2000));
 
-  return { user: "Fake User" };
+  return { userId: crypto.randomUUID() };
 }

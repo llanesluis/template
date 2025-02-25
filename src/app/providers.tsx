@@ -21,7 +21,7 @@ export default function Providers({ children }: ProvidersProps) {
   );
 }
 
-type SessionContextType = Promise<{ user: string }>;
+type SessionContextType = Promise<{ userId: string }>;
 
 export const SessionContext = createContext<SessionContextType | undefined>(
   undefined,
@@ -32,7 +32,7 @@ export function SessionProvider({
   session,
 }: {
   children: ReactNode;
-  session: Promise<{ user: string }>;
+  session: Promise<{ userId: string }>;
 }) {
   return <SessionContext value={session}>{children}</SessionContext>;
 }

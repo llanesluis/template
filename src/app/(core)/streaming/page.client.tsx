@@ -1,10 +1,16 @@
 "use client";
 
 import { H3 } from "@/components/headings";
-import { useActionState, useState } from "react";
-import { addPost } from "./actions";
+import { use, useActionState, useState } from "react";
+import { addPost } from "../../actions";
+import { LoadingButton } from "@/components/loading-button";
 
-export default function FormActionExample() {
+export default function FormActionExample({
+  sessionPromise,
+}: {
+  sessionPromise: Promise<{ userId: string }>;
+}) {
+  const session = use(sessionPromise);
   const [author, setAuthor] = useState("");
 
   const noHiddenInputAction = async (
@@ -13,6 +19,8 @@ export default function FormActionExample() {
   ) => {
     const title = formData.get("title")?.toString() || "";
 
+    await new Promise((r) => setTimeout(r, 1000));
+
     // whatever you return here will fill the "state" variable
     return await addPost(previousState, {
       title, // pull from form input
@@ -20,7 +28,10 @@ export default function FormActionExample() {
     });
   };
 
-  const [state, addPostAction] = useActionState(noHiddenInputAction, null);
+  const [state, addPostAction, isLoading] = useActionState(
+    noHiddenInputAction,
+    null,
+  );
 
   return (
     <section className="bg-muted/10 outline-muted flex flex-col gap-2 p-2 backdrop-blur-sm outline-dashed">
@@ -42,7 +53,7 @@ export default function FormActionExample() {
           </select>
         </label>
 
-        <form action={addPostAction}>
+        <form action={addPostAction} className="flex flex-wrap items-end gap-2">
           <label className="flex flex-col gap-2">
             Title: Input value from FormData
             <input
@@ -50,8 +61,10 @@ export default function FormActionExample() {
               name="title"
               placeholder="Title"
               className="bg-muted p-1"
+              defaultValue={session.userId}
             />
           </label>
+          <LoadingButton isLoading={isLoading}>Submit</LoadingButton>
         </form>
       </div>
 

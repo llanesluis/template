@@ -9,7 +9,11 @@ interface Props extends ComponentProps<typeof Button> {
 
 export function LoadingButton({ isLoading, children, ...props }: Props) {
   return (
-    <Button {...props} disabled={isLoading} className="loading-button">
+    <Button
+      {...props}
+      disabled={isLoading}
+      className="loading-button cursor-pointer rounded-none"
+    >
       <span className={cn("content", isLoading ? "invisible" : "visible")}>
         {children}
       </span>

@@ -44,6 +44,7 @@ export default function CommaSeparatedInput() {
         onChange={handleInputChange}
         onKeyDown={handleSubmit}
         value={input}
+        className="bg-muted p-1"
       />
       <div className="flex flex-wrap gap-4">
         {tags.map((tag) => (

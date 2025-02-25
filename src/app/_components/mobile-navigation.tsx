@@ -2,6 +2,7 @@
 
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
+import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/utils/constants";
 import { Sidebar } from "lucide-react";
 import Link from "next/link";
@@ -56,7 +57,10 @@ export default function MobileNavigation() {
               <Link
                 key={href}
                 href={href}
-                className="text-4xl font-bold lowercase transition-all ease-out hover:translate-x-2 hover:text-neutral-500"
+                className={cn(
+                  "text-4xl font-bold lowercase transition-all ease-out hover:translate-x-3 hover:text-neutral-500",
+                  href === pathname && "translate-x-3 text-red-500 underline",
+                )}
               >
                 {title}
               </Link>
