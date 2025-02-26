@@ -18,7 +18,7 @@ export default async function StreamingPage() {
       <SectionWrapper className="space-y-4">
         <FreshnessTimer generatedAt={generatedAt} />
 
-        <H1>Contact me - Dynamic & Streaming</H1>
+        <H1>Dynamic & Streaming</H1>
         <p className="text-muted-foreground text-pretty">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
           nisi maxime, mollitia quos unde molestiae fugit quisquam

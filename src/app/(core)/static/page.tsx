@@ -10,7 +10,7 @@ export default function StaticPage() {
       <SectionWrapper className="space-y-4">
         <FreshnessTimer generatedAt={generatedAt} />
 
-        <H1>Static Page</H1>
+        <H1>Static</H1>
         <p className="text-muted-foreground text-pretty">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo impedit
           quidem doloribus, earum, aspernatur ab optio ea delectus enim adipisci
