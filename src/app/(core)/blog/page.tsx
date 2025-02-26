@@ -1,11 +1,16 @@
+import { FreshnessTimer } from "@/app/_components/timer";
 import { H1, H2 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 import Link from "next/link";
 
 export default function BlogPage() {
+  const generatedAt = Date.now();
+
   return (
     <ContainerWrapper>
       <SectionWrapper className="space-y-4">
+        <FreshnessTimer generatedAt={generatedAt} />
+
         <H1>Blog - Static</H1>
         <p className="text-muted-foreground text-pretty">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit

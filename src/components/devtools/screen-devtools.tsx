@@ -20,7 +20,7 @@ function ScreenDevTools() {
   return (
     <div
       className={cn(
-        "fixed bottom-10 left-10 isolate z-1 transition-all",
+        "pointer-events-auto fixed bottom-5 left-5 isolate z-9999 transition-all",
         !isShow && "bottom-0 translate-y-full",
       )}
     >
@@ -28,8 +28,8 @@ function ScreenDevTools() {
       <button
         onClick={() => setIsShow(!isShow)}
         className={cn(
-          "absolute left-[50%] top-[-50%] z-[-1] translate-x-[-50%]",
-          "size-10 rounded-full border bg-muted shadow-sm",
+          "absolute top-[-50%] left-[50%] z-[-1] translate-x-[-50%] cursor-pointer",
+          "bg-muted size-10 rounded-full border shadow-sm",
           isShow && "translate-y-[10%]",
         )}
       >
@@ -42,7 +42,7 @@ function ScreenDevTools() {
       </button>
 
       {/* DevTools */}
-      <div className="flex justify-between gap-1 rounded-full border bg-muted p-1 shadow-sm">
+      <div className="bg-muted flex justify-between gap-1 rounded-full border p-1 shadow-md">
         <ScreenSize />
         <ThemeSelector />
       </div>
@@ -64,7 +64,7 @@ function ScreenSize() {
     <div
       className={cn(
         "inline-flex w-fit items-center justify-center gap-2",
-        "rounded-full border bg-background p-2 text-sm",
+        "bg-background rounded-full border p-2 text-sm",
       )}
     >
       <div className="w-8 text-center">
@@ -76,7 +76,7 @@ function ScreenSize() {
         <div className="hidden 2xl:block">2xl</div>
       </div>
 
-      <div className="h-full w-[2px] bg-muted" />
+      <div className="bg-muted h-full w-[2px]" />
 
       <div>
         <span className="font-semibold">{windowWidth}</span>px
@@ -91,14 +91,17 @@ export function ThemeSelector() {
 
   return (
     <div
-      className="inline-flex w-fit items-center gap-1 rounded-full border bg-background p-1"
+      className="bg-background inline-flex w-fit items-center gap-1 rounded-full border p-1"
       role="radiogroup"
     >
       <button
         onClick={() => setTheme("light")}
         aria-checked={theme === "light"}
         aria-label="Switch to light theme"
-        className={cn("rounded-full p-2", theme === "light" && "bg-muted")}
+        className={cn(
+          "hover:bg-muted/70 cursor-pointer rounded-full p-2",
+          theme === "light" && "bg-muted hover:bg-muted",
+        )}
         data-theme-switcher="true"
         role="radio"
         type="button"
@@ -110,7 +113,10 @@ export function ThemeSelector() {
         onClick={() => setTheme("system")}
         aria-checked={theme === "system"}
         aria-label="Switch to system theme"
-        className={cn("rounded-full p-2", theme === "system" && "bg-muted")}
+        className={cn(
+          "hover:bg-muted/70 cursor-pointer rounded-full p-2",
+          theme === "system" && "bg-muted hover:bg-muted",
+        )}
         data-theme-switcher="true"
         role="radio"
         type="button"
@@ -122,7 +128,10 @@ export function ThemeSelector() {
         onClick={() => setTheme("dark")}
         aria-checked={theme === "dark"}
         aria-label="Switch to dark theme"
-        className={cn("rounded-full p-2", theme === "dark" && "bg-muted")}
+        className={cn(
+          "hover:bg-muted/70 cursor-pointer rounded-full p-2",
+          theme === "dark" && "bg-muted hover:bg-muted",
+        )}
         data-theme-switcher="true"
         role="radio"
         type="button"

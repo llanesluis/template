@@ -10,7 +10,9 @@ export default function CoreLayout({ children }: CoreLayoutProps) {
     <div>
       <aside className="border-b">
         <ContainerWrapper>
-          <ul className="py-1">Blog {">"} Title</ul>
+          <ul className="text-muted-foreground py-1">
+            Fake breadcrumbs {">"} Blog {">"} Title
+          </ul>
         </ContainerWrapper>
       </aside>
 

@@ -16,13 +16,22 @@ export function FreshnessTimer({ generatedAt }: { generatedAt: number }) {
   }, [generatedAt]);
 
   return (
-    <p className="text-muted-foreground bg-muted w-fit border px-2 py-1">
-      Data has been fresh for:{" "}
-      <span className="text-foreground font-semibold">
-        {secondsElapsed !== null
-          ? `${secondsElapsed} second${secondsElapsed !== 1 ? "s" : ""}`
-          : ""}
-      </span>
-    </p>
+    <div className="bg-muted text-muted-foreground relative w-fit border px-2 py-1 text-pretty">
+      <p className="text-xs">
+        Last generated:{" "}
+        <span className="text-foreground font-semibold">
+          {new Date(generatedAt).toUTCString()}
+        </span>
+      </p>
+
+      <p className="">
+        Data has been fresh for:{" "}
+        <span className="text-foreground font-semibold">
+          {secondsElapsed !== null
+            ? `${secondsElapsed} second${secondsElapsed !== 1 ? "s" : ""}`
+            : ""}
+        </span>
+      </p>
+    </div>
   );
 }

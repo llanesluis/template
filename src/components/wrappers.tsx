@@ -20,12 +20,7 @@ export function ContainerWrapper({
 }: ComponentProps<"div">) {
   return (
     <div
-      className={cn(
-        "mx-auto size-full max-w-6xl",
-        "px-4 sm:px-6 lg:px-8",
-        "border-x",
-        className,
-      )}
+      className={cn("wrapper", "px-4 sm:px-6 lg:px-8", "border-x", className)}
       {...props}
     >
       {children}

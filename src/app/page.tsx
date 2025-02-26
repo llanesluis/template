@@ -17,35 +17,39 @@ export default function HomePage() {
   const generatedAt = Date.now();
 
   return (
-    <>
-      <section className="border-b">
-        <ContainerWrapper className="wrapper relative">
-          <BackgroundEffect />
+    <section>
+      <ContainerWrapper className="relative">
+        <BackgroundEffect />
 
-          <SectionWrapper className="space-y-2">
-            <FreshnessTimer generatedAt={generatedAt} />
-            <H1>Hello World! - ISR</H1>
-            <p className="text-muted-foreground">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H2>Hello World!</H2>
-            <p className="text-muted-foreground">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
-            <H3>Hello World!</H3>
-            <p className="text-muted-foreground">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-              Possimus, incidunt quaerat suscipit ipsam repudiandae dolor.
-            </p>
+        <SectionWrapper className="space-y-4">
+          <FreshnessTimer generatedAt={generatedAt} />
 
-            <form action={revalidateAction}>
-              <Button className="rounded-none">Revalidate page</Button>
-            </form>
-          </SectionWrapper>
-        </ContainerWrapper>
-      </section>
-    </>
+          <H1>Hello World! - ISR</H1>
+          <p className="text-muted-foreground">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
+            incidunt quaerat suscipit ipsam repudiandae dolor.
+          </p>
+          <H2>
+            This page will be revalidated 15 seconds after being generated if
+            requested by someone.
+          </H2>
+          <p className="text-muted-foreground">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
+            incidunt quaerat suscipit ipsam repudiandae dolor.
+          </p>
+          <H3>
+            Revalidate this page on demand to force the page to be re-generated
+          </H3>
+          <p className="text-muted-foreground">
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Possimus,
+            incidunt quaerat suscipit ipsam repudiandae dolor.
+          </p>
+
+          <form action={revalidateAction}>
+            <Button className="rounded-none">Revalidate page</Button>
+          </form>
+        </SectionWrapper>
+      </ContainerWrapper>
+    </section>
   );
 }

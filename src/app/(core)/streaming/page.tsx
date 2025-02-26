@@ -5,49 +5,52 @@ import { Suspense } from "react";
 import FormActionExample from "@/app/(core)/streaming/page.client";
 import { getSession } from "@/lib/session";
 import { LoadingButton } from "@/components/loading-button";
+import { FreshnessTimer } from "@/app/_components/timer";
 
 export const dynamic = "force-dynamic";
 
 export default async function StreamingPage() {
   const sessionPromise = getSession();
+  const generatedAt = Date.now();
+
   return (
-    <>
-      <ContainerWrapper>
-        <SectionWrapper className="space-y-4">
-          <H1>Contact me - Dynamic & Streaming</H1>
-          <p className="text-muted-foreground text-pretty">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
-            nisi maxime, mollitia quos unde molestiae fugit quisquam
-            exercitationem, laudantium aliquid?
-          </p>
-        </SectionWrapper>
+    <ContainerWrapper>
+      <SectionWrapper className="space-y-4">
+        <FreshnessTimer generatedAt={generatedAt} />
 
-        <SectionWrapper>
-          {/* if Suspense is omitted the whole page will suspend*/}
-          <Suspense fallback={<FormActionExampleFallback />}>
-            {/* useFormAction + Server Action + FormData + Clousure over React State */}
-            <FormActionExample sessionPromise={sessionPromise} />
-          </Suspense>
-        </SectionWrapper>
+        <H1>Contact me - Dynamic & Streaming</H1>
+        <p className="text-muted-foreground text-pretty">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Autem odit
+          nisi maxime, mollitia quos unde molestiae fugit quisquam
+          exercitationem, laudantium aliquid?
+        </p>
+      </SectionWrapper>
 
-        <SectionWrapper>
-          <form className="flex flex-col gap-2">
-            <label htmlFor="email">Email</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className="bg-muted p-1"
-            />
-            <label className="flex flex-col">
-              Tags
-              <CommaSeparatedInput />
-            </label>
-            <LoadingButton type="submit">Send</LoadingButton>
-          </form>
-        </SectionWrapper>
-      </ContainerWrapper>
-    </>
+      <SectionWrapper>
+        {/* if Suspense is omitted the whole page will suspend*/}
+        <Suspense fallback={<FormActionExampleFallback />}>
+          {/* useFormAction + Server Action + FormData + Clousure over React State */}
+          <FormActionExample sessionPromise={sessionPromise} />
+        </Suspense>
+      </SectionWrapper>
+
+      <SectionWrapper>
+        <form className="flex flex-col gap-2">
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            className="bg-muted p-1"
+          />
+          <label className="flex flex-col">
+            Tags
+            <CommaSeparatedInput />
+          </label>
+          <LoadingButton type="submit">Send</LoadingButton>
+        </form>
+      </SectionWrapper>
+    </ContainerWrapper>
   );
 }
 

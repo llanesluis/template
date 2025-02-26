@@ -1,12 +1,17 @@
+import { FreshnessTimer } from "@/app/_components/timer";
 import { H1 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 import { getSession } from "@/lib/session";
 import { Suspense } from "react";
 
 export default async function SignInPage() {
+  const generatedAt = Date.now();
+
   return (
     <ContainerWrapper>
       <SectionWrapper className="space-y-4">
+        <FreshnessTimer generatedAt={generatedAt} />
+
         <H1>Sign In - Dynamic</H1>
 
         <Suspense fallback={<p className="animate-pulse">Loading user...</p>}>

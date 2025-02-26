@@ -1,3 +1,4 @@
+import { FreshnessTimer } from "@/app/_components/timer";
 import { H1 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 
@@ -14,11 +15,14 @@ interface Props {
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
+  const generatedAt = Date.now();
 
   return (
     <ContainerWrapper>
       <SectionWrapper className="space-y-4">
-        <H1>{slug}</H1>
+        <FreshnessTimer generatedAt={generatedAt} />
+
+        <H1>{slug} - SSG</H1>
         <p className="text-muted-foreground">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
           officiis esse sed repellat, at illum eligendi sunt perspiciatis
