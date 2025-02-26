@@ -26,7 +26,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className="scroll-smooth antialiased selection:bg-neutral-300 dark:selection:bg-neutral-600"
+      className="scroll-smooth antialiased"
       suppressHydrationWarning
     >
       <body
@@ -34,6 +34,7 @@ export default function RootLayout({
           geist.variable,
           geistMono.variable,
           "animate-blurred-fade-in flex min-h-svh flex-col font-mono",
+          "selection:text-background selection:bg-neutral-700 dark:selection:bg-neutral-300",
         )}
       >
         <Providers>

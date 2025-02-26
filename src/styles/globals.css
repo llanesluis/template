@@ -187,7 +187,7 @@
 }
 
 /* Idk if this is the way for gradients */
-@utility bg-gradient-blue {
+@utility bg-gradient {
   background-image: var(--gradient);
 }
 
@@ -196,7 +196,6 @@
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
-  -webkit-text-fill-color: transparent;
   display: inline-block;
 }
 

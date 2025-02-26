@@ -14,8 +14,8 @@ export default function MainNavigation() {
           key={href}
           href={href}
           className={cn(
-            "font-semibold lowercase transition-all ease-out hover:translate-y-[-2px] hover:text-neutral-500",
-            href === pathname && "text-red-500 underline",
+            "font-semibold lowercase transition-all ease-out hover:text-neutral-500",
+            href === pathname && "text-gradient underline",
           )}
         >
           {title}

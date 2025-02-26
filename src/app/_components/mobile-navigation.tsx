@@ -59,7 +59,7 @@ export default function MobileNavigation() {
                 href={href}
                 className={cn(
                   "text-4xl font-bold lowercase transition-all ease-out hover:translate-x-3 hover:text-neutral-500",
-                  href === pathname && "translate-x-3 text-red-500 underline",
+                  href === pathname && "text-gradient translate-x-3 underline",
                 )}
               >
                 {title}
