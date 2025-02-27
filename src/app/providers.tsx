@@ -1,6 +1,5 @@
 "use client";
 
-import { getSession } from "@/lib/session";
 import { ThemeProvider } from "next-themes";
 import { createContext, ReactNode, use } from "react";
 

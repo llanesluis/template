@@ -5,11 +5,12 @@ type Post = {
   author: string;
 };
 
-export async function addPost(previousState: any, { title, author }: Post) {
+export async function addPost(previousState: unknown, { title, author }: Post) {
   // ...
   // your logic that will run server side because this is a server action
   // ...
 
+  // eslint-disable-next-line no-console
   console.log({ title, author });
 
   // whatever you return here will fill the "state" variable

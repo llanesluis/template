@@ -14,7 +14,7 @@ export default function FormActionExample({
   const [author, setAuthor] = useState("");
 
   const noHiddenInputAction = async (
-    previousState: any,
+    previousState: unknown,
     formData: FormData,
   ) => {
     const title = formData.get("title")?.toString() || "";

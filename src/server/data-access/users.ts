@@ -6,6 +6,6 @@ export async function getUsers() {
   // 3. handle errors & return data, blah, blah
 }
 
-export async function getUser(id: string) {}
+export async function getUser() {}
 
-export async function createUser(data: any) {}
+export async function createUser() {}

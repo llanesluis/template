@@ -12,10 +12,10 @@ export const DynamicScreenDevTools = dynamic(async () => ScreenDevTools, {
 });
 
 function ScreenDevTools() {
+  const [isShow, setIsShow] = useState(true);
+
   // This won't ship to your production build
   if (process.env.NODE_ENV === "production") return null;
-
-  const [isShow, setIsShow] = useState(true);
 
   return (
     <div

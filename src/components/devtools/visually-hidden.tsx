@@ -2,7 +2,7 @@
 
 import { HTMLAttributes, useEffect, useState } from "react";
 
-interface VisuallyHiddenProps extends HTMLAttributes<HTMLSpanElement> {}
+type VisuallyHiddenProps = HTMLAttributes<HTMLSpanElement>;
 
 export default function VisuallyHidden({
   children,
@@ -38,7 +38,7 @@ export default function VisuallyHidden({
 
   if (forceShow) {
     return (
-      <span className="pointer-events-none text-muted-foreground">
+      <span className="text-muted-foreground pointer-events-none">
         {children}
       </span>
     );

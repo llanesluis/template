@@ -15,7 +15,10 @@ const eslintConfig = [
     rules: {
       "@next/next/no-page-custom-font": "warn",
       "no-console": "warn",
-      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-unused-vars": [
+        "warn",
+        { argsIgnorePattern: "^_" },
+      ],
     },
   },
 ];
