@@ -171,6 +171,7 @@
     }
   }
 }
+
 @utility container {
   margin-inline: auto;
   padding-inline: 2rem;
@@ -217,19 +218,19 @@
   }
 }
 
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
 @layer utilities {
   * {
     scrollbar-width: thin;
     scrollbar-color: hsl(var(--border)) transparent;
-  }
-}
-
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
 
@@ -243,18 +244,5 @@
   }
   & .loader {
     grid-area: stack;
-  }
-}
-
-/*
-  ---break---
-*/
-
-@layer base {
-  * {
-    @apply border-border outline-ring/50;
-  }
-  body {
-    @apply bg-background text-foreground;
   }
 }
