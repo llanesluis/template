@@ -2,11 +2,12 @@ import { FreshnessTimer } from "@/app/_components/timer";
 import { H1 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 
-export const dynamicParams = false;
+export const dynamicParams = true;
 
-export async function generateStaticParams() {
-  return [{ slug: "1" }, { slug: "2" }, { slug: "3" }, { slug: "4" }];
-}
+// Ignore this, you don't want cached pages
+// export async function generateStaticParams() {
+//   return [{ slug: "1" }, { slug: "2" }, { slug: "3" }, { slug: "4" }];
+// }
 
 interface Props {
   // params are always parsed as strings by default
@@ -22,7 +23,7 @@ export default async function Page({ params }: Props) {
       <SectionWrapper className="space-y-4">
         <FreshnessTimer generatedAt={generatedAt} />
 
-        <H1>{slug} - SSG</H1>
+        <H1>{slug}</H1>
         <p className="text-muted-foreground">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
           officiis esse sed repellat, at illum eligendi sunt perspiciatis

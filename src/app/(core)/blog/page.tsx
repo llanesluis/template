@@ -6,6 +6,9 @@ import Link from "next/link";
 export default function BlogPage() {
   const generatedAt = Date.now();
 
+  // Comment this line to see the /dashboard/ Page contents along with the hacky dashboard
+  return null;
+
   return (
     <ContainerWrapper>
       <SectionWrapper className="space-y-4">
