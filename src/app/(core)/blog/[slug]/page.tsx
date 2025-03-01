@@ -1,5 +1,5 @@
 import { FreshnessTimer } from "@/app/_components/timer";
-import { H1 } from "@/components/headings";
+import { H1, H3 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
 
 export const dynamicParams = true;
@@ -12,9 +12,11 @@ export const dynamicParams = true;
 interface Props {
   // params are always parsed as strings by default
   params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string>>;
 }
 
-export default async function Page({ params }: Props) {
+export default async function Page({ params, searchParams }: Props) {
+  await new Promise((resolve) => setTimeout(resolve, 2000));
   const { slug } = await params;
   const generatedAt = Date.now();
 
@@ -24,6 +26,7 @@ export default async function Page({ params }: Props) {
         <FreshnessTimer generatedAt={generatedAt} />
 
         <H1>{slug}</H1>
+        <H3>searchParams: {JSON.stringify(searchParams)}</H3>
         <p className="text-muted-foreground">
           Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque
           officiis esse sed repellat, at illum eligendi sunt perspiciatis

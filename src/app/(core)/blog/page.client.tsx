@@ -24,32 +24,32 @@ export default function Dashboard({ initialData }: { initialData: number }) {
 
         <div className="flex flex-wrap justify-between gap-4 rounded-full">
           <Link
-            href={"/blog?test=workss"}
+            href={"/blog?test=works"}
             className="bg-muted h-fit w-46 border"
           >
             Root
             <FreshnessTimer generatedAt={initialData} />
           </Link>
           <Link
-            href={"/blog/1?test=worksss"}
+            href={"/blog/1?test=works1"}
             className="bg-muted h-fit w-46 border"
           >
             1 <FreshnessTimer generatedAt={initialData} />
           </Link>
           <Link
-            href={"/blog/2?test=worksss"}
+            href={"/blog/2?test=works2"}
             className="bg-muted h-fit w-46 border"
           >
             2 <FreshnessTimer generatedAt={initialData} />
           </Link>
           <Link
-            href={"/blog/3?test=workss"}
+            href={"/blog/3?test=works3"}
             className="bg-muted h-fit w-46 border"
           >
             3 <FreshnessTimer generatedAt={initialData} />
           </Link>
           <Link
-            href={"/blog/4?test=workss"}
+            href={"/blog/4?test=works4"}
             className="bg-muted h-fit w-46 border"
           >
             4 <FreshnessTimer generatedAt={initialData} />
