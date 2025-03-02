@@ -12,6 +12,8 @@ import {
 } from "./actions";
 import TodoItem from "./page.client";
 
+export const dynamic = "force-dynamic";
+
 export default async function TodosPage() {
   const todos = await db.select().from(todosTable).orderBy(todosTable.id);
   const generatedAt = Date.now();
