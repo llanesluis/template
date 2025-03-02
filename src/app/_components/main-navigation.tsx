@@ -1,7 +1,7 @@
 "use client";
 
 import { cn } from "@/lib/utils";
-import { NAV_LINKS } from "@/utils/constants";
+import { NAV_LINKS } from "@/utils/constants/nav-links";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 

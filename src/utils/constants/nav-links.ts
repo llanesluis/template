@@ -8,6 +8,7 @@ type NavLink = {
 export const NAV_LINKS = [
   { href: "/static", title: "Static" },
   { href: "/streaming", title: "Streaming" },
+  { href: "/todos", title: "Todos" },
   { href: "/blog", title: "Blog" },
   { href: "/sign-in", title: "Sign In" },
   { href: "/sign-up", title: "Sign Up" },

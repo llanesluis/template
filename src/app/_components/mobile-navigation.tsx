@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTitle } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { NAV_LINKS } from "@/utils/constants";
+import { NAV_LINKS } from "@/utils/constants/nav-links";
 import { Sidebar } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";

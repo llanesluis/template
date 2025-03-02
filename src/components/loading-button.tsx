@@ -12,7 +12,10 @@ export function LoadingButton({ isLoading, children, ...props }: Props) {
     <Button
       {...props}
       disabled={isLoading}
-      className="loading-button cursor-pointer rounded-none"
+      className={cn(
+        "loading-button cursor-pointer rounded-none",
+        props.className,
+      )}
     >
       <span className={cn("content", isLoading ? "invisible" : "visible")}>
         {children}
