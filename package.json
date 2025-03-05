@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "build": "pnpm db:generate && pnpm db:push && next build",
+    "build": "next build",
     "start": "node .next/standalone/server.js",
     "start:normal": "next start",
     "lint": "next lint",

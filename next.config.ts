@@ -6,6 +6,7 @@ const nextConfig = {
   },
   ppr: true,
   output: "standalone",
+  compress: false,
 } satisfies NextConfig;
 
 export default nextConfig;

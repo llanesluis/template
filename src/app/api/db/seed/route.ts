@@ -3,7 +3,7 @@ import { TodoInsert, todosTable } from "@/lib/db/schema";
 import { revalidatePath } from "next/cache";
 import { NextResponse } from "next/server";
 
-export async function GET() {
+export async function POST() {
   await db.delete(todosTable);
 
   const seedTodos: TodoInsert[] = [
