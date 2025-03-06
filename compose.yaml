@@ -2,6 +2,8 @@ services:
   db:
     container_name: production_postgres_db
     image: postgres:latest
+    env_file:
+      - ./.env.production
     environment:
       POSTGRES_USER: ${DATABASE_USER}
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
@@ -19,9 +21,25 @@ services:
       timeout: 5s
       retries: 5
 
+  migrations:
+    container_name: production_migrations
+    build:
+      context: .
+      target: migrations
+    env_file:
+      - ./.env.production
+    depends_on:
+      db:
+        condition: service_healthy
+    networks:
+      - my_network
+    restart: on-failure
+
   web:
     container_name: production_web
-    build: .
+    build:
+      context: .
+      target: runner
     ports:
       - "3000:3000"
     env_file:
@@ -29,6 +47,8 @@ services:
     depends_on:
       db:
         condition: service_healthy
+      migrations:
+        condition: service_started
     networks:
       - my_network
 

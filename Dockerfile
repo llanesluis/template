@@ -9,6 +9,12 @@ WORKDIR /app
 COPY package.json pnpm-lock.yaml ./
 RUN pnpm install --frozen-lockfile
 
+# Stage for migrations
+FROM deps AS migrations
+WORKDIR /app
+COPY . .
+CMD /bin/sh -c "pnpm db:generate && pnpm db:push"
+
 # Stage 2: Build the application
 FROM base AS builder
 WORKDIR /app

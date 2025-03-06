@@ -1,3 +1,4 @@
+import ReactScan from "@/components/devtools/react-scan";
 import Footer from "@/app/_components/footer";
 import Navbar from "@/app/_components/navbar";
 import Providers from "@/app/providers";
@@ -29,6 +30,7 @@ export default function RootLayout({
       className="scroll-smooth antialiased"
       suppressHydrationWarning
     >
+      <ReactScan />
       <body
         className={cn(
           geist.variable,
