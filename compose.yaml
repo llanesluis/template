@@ -9,7 +9,7 @@ services:
       POSTGRES_PASSWORD: ${DATABASE_PASSWORD}
       POSTGRES_DB: ${DATABASE_NAME}
     ports:
-      - "5432:5432"
+      - "5433:5432"
     restart: always
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -41,7 +41,7 @@ services:
       context: .
       target: runner
     ports:
-      - "3000:3000"
+      - "3001:3000"
     env_file:
       - ./.env.production
     depends_on:
