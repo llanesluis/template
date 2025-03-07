@@ -1,5 +1,7 @@
 FROM node:18-alpine AS base
 
+# Install postgresql-client to interact with the database
+RUN apk add --no-cache postgresql-client
 # Install pnpm globally
 RUN npm install -g pnpm
 
@@ -13,7 +15,8 @@ RUN pnpm install --frozen-lockfile
 FROM deps AS migrations
 WORKDIR /app
 COPY . .
-CMD /bin/sh -c "pnpm db:generate && pnpm db:push"
+RUN chmod +x run_migrations.sh
+CMD ["./run_migrations.sh"]
 
 # Stage 2: Build the application
 FROM base AS builder
