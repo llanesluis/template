@@ -1,6 +1,7 @@
 import { FreshnessTimer } from "@/app/_components/timer";
 import { H1 } from "@/components/headings";
 import { ContainerWrapper, SectionWrapper } from "@/components/wrappers";
+import { notFound } from "next/navigation";
 
 export const dynamicParams = false;
 
@@ -16,6 +17,8 @@ interface Props {
 export default async function Page({ params }: Props) {
   const { slug } = await params;
   const generatedAt = Date.now();
+
+  if (slug === "3") notFound();
 
   return (
     <ContainerWrapper>
